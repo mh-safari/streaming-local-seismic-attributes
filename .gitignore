@@ -1,0 +1,19 @@
+# MATLAB temporary and backup files
+*.asv
+*.m~
+*.autosave
+
+# MATLAB generated files
+*.mex*
+*.p
+
+# MATLAB figures and generated files
+*.fig
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+.vscode/
+.idea/
