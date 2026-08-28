@@ -28,8 +28,9 @@ signal1 = chirp(t,5,4,25);  % Creating the chirp signal
 %% Creating second synthetic signal (a synthetic seismic trace)
 
 fd = 40;                        % fd = Dominant frequency (Hz)
-t2 = -0.2 : dt : 0.2;           % t2 = Time (s)
-ricker_wavelet = (1-2*(pi^2)*(fd^2).*(t2.^2)) .* exp (-((pi*fd.*t2).^2));   
+t_wavelet = -0.2 : dt : 0.2;    %t_wavelet = Time (s)
+ricker_wavelet = (1-2*(pi^2)*(fd^2).*(t_wavelet.^2)) ...
+    .* exp (-((pi*fd.*t_wavelet).^2));   
 reflectivity = zeros(1,140);    % A synthetic reflectivity
 reflectivity(1,1) = -1;
 reflectivity(1,40) = 0.6;
@@ -38,7 +39,7 @@ reflectivity(1,80) = -0.5;
 reflectivity(1,100) = 0.6;
 reflectivity(1,120) = 1;
 signal2 = conv(reflectivity,ricker_wavelet);
-t2 = 0 : dt : dt*(length(signal)-1);
+t2 = 0 : dt : dt*(length(signal2)-1);
 
 %% Instantaneous frequency 
 w1 = inst_freq(signal1,fs);
