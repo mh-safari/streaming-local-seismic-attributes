@@ -1,6 +1,7 @@
 % sltfm
 %
-% This function calculates the streaming local frequency map of a signal
+% This function calculates the streaming local time-frequency map of a 
+% signal
 %
 % Inputs:
 %   signal  : Input signal (time - domain vector)
@@ -9,7 +10,7 @@
 %             is allowed to deviate from the previous one
 %   
 % Output:
-%   Cs      : Streaming local frequency of the signal
+%   Cs      : Streaming local time-frequency map of the signal
 
 function Cs = sltfm(signal, fs, lambda)
     n_samples = length(signal);    
