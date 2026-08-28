@@ -22,7 +22,7 @@
 
 function cfs = lcf_slices(data, fs, win_size, lambda1, lambda2, freq)
     dt = 1/fs;                      % Sampling period (s)
-    receivers = length(data);
+    receivers = size(data,2);
     t_sample = length(data(:,1));   % The number of time samples
     t = 0 : dt : dt * (t_sample-1); % Time (s)
     % freqs contains the frequencies allowed by the Nyquist criterion
