@@ -24,7 +24,7 @@ n_samples = length(t);
 % freqs contains the frequencies allowed by the Nyquist criterion
 freqs  = linspace(0,fs/2,n_samples);               
 
-%% Creating the synthetic signشl
+%% Creating the synthetic signal
 
 signal = chirp(t,10,2,40,"quadratic") + chirp(t,30,2,60,"quadratic");
 signal = awgn(signal,1);        % Adding Gaussian noise to the chirp signal
